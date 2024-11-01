@@ -1,0 +1,39 @@
+<div class="container">
+    <h2> Edit Danh Muc </h2>
+    <div class="top">
+        <button class="back-btn w3-btn w3-ripple w3-green" routerLink="/DanhMuc"><i class="fa fa-reply" aria-hidden="true"></i> Back to list</button>
+        <button class="back-btn w3-btn w3-ripple w3-purple" (click)="saveEdit()">Save edit</button>
+    </div>
+    <form>
+        <div>
+            <label for="tenDanhMuc">Ten Danh Muc :</label>
+            <input type="text" name="tenDanhMuc" [(ngModel)]="tenDanhMuc" class="form-control">
+        </div>
+        <div class="DanhMucCha">
+            <label for="danhMuc">Danh Muc Cha :</label>
+            <select [(ngModel)]="selectedDanhMucId" [ngModelOptions]="{standalone: true}">
+                <option [value]="null"> </option>
+                <ng-container *ngFor="let parent of danhMucTree">
+                    <option [value]="parent.cat.id">
+                        {{parent.cat.tenDanhMuc}}
+                    </option>
+                    <ng-container *ngFor="let child of parent.danhMucCon ">
+                        <option [value]="child.cat.id">
+                            --{{child.cat.tenDanhMuc}}
+                        </option>
+                        <ng-container *ngFor="let grandChild of child.danhMucIds">
+                            <option [value]="grandChild.cat.id">
+                                ----{{grandChild.cat.tenDanhMuc}}
+                            </option>
+                            <ng-container *ngFor="let grandChilds1 of grandChild.danhMucCon">
+                                <option [value]="grandChilds1.cat.id">
+                                    ------{{grandChilds1.cat.tenDanhMuc}}
+                                </option>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>    
+            </select>
+        </div>
+    </form>
+</div>

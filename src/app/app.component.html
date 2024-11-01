@@ -1,0 +1,26 @@
+<div class="container header" style="display: flex;">
+  <div class="container" style="display: flex;">
+    <div>
+      <h4><a href="" class="nav-link active"><i class="fa fa-home" aria-hidden="true" ></i> Quản Lý Sách</a></h4>
+    </div>
+  </div>
+  
+  <div class="container" >
+    <div class="search-box" style="display: flex;">
+      <input type="search" class="form-control" placeholder="Nhập tên sách...!"> <button class="custom-btn w3-ripple"><i class="fa fa-search w3-ripple" aria-hidden="true"></i></button>   
+    </div>
+  </div>
+
+  <div class="container" style="display: flex;">   
+    <div class="Login logout">
+      <button class="custom-btn w3-ripple"><i class="fa fa-shopping-basket" aria-hidden="true"></i></button>   
+      <button class="custom-btn w3-ripple" routerLink="/Login"> Đăng Nhập <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+      <button class="custom-btn w3-ripple" (click)="logOut()"> Đăng Xuất <i class="fa fa-sign-out" aria-hidden="true"></i></button>
+    </div>
+  </div> 
+</div>
+<nav style="background-color: #75c1f8;">
+  <button class="list-btn" style="background-color: #75c1f8;" routerLink="/DanhMuc">Danh Mục</button> |
+  <i class="fa-thin fa-book-open-cover"></i><button class="list-btn" style="background-color: #75c1f8;" routerLink="/Sach">Danh Sách Sách</button>
+</nav>
+<router-outlet></router-outlet>

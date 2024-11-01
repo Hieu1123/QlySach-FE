@@ -1,0 +1,56 @@
+<div class="container">
+    <h2> Edit Sach </h2>
+    <div class="top">
+        <button class="back-btn w3-btn w3-ripple w3-green" routerLink="/Sach"><i class="fa fa-reply" aria-hidden="true"></i> Back to list</button>
+        <button class="back-btn w3-btn w3-ripple w3-purple" (click)="saveEdit()">Save edit</button>
+    </div>
+    <form>
+        <div>
+            <label for="tenSach"> Ten Sach :</label>
+            <input type="text" class="form-control" [(ngModel)]="tenSach" [ngModelOptions]="{standalone: true}" name="tenSach">
+        </div>
+        <div>
+            <label for="soLuong"> So Luong:</label>
+            <input type="number" class="form-control" [(ngModel)]="soLuong" [ngModelOptions]="{standalone: true}"name="soLuong">
+        </div>
+        <div>
+            <label for="giaTien"> Gia Tien :</label>
+            <input type="number" class="form-control" [(ngModel)]="giaTien" [ngModelOptions]="{standalone: true}"name="giaTien">
+        </div>
+        <div>
+            <label for="danhMuc">Chon Danh Muc :</label>
+            <select [(ngModel)]="selectedDanhMucId" [ngModelOptions]="{standalone: true}">
+                <ng-container *ngFor="let parent of danhMucTree">
+                    <option [value]="parent.cat.id">
+                        {{parent.cat.tenDanhMuc}}
+                    </option>
+                    <ng-container *ngFor="let child of parent.danhMucCon ">
+                        <option [value]="child.cat.id">
+                            --{{child.cat.tenDanhMuc}}
+                        </option>
+                        <ng-container *ngFor="let grandChild of child.danhMucIds">
+                            <option [value]="grandChild.cat.id">
+                                ----{{grandChild.cat.tenDanhMuc}}
+                            </option>
+                            <ng-container *ngFor="let grandChilds1 of grandChild.danhMucCon">
+                                <option [value]="grandChilds1.cat.id">
+                                    ------{{grandChilds1.cat.tenDanhMuc}}
+                                </option>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>    
+            </select>
+            <button class="add-btn w3-ripple w3-blue" (click)="addNewDanhMuc(selectedDanhMucId)">Thêm Danh Mục</button>
+        </div>
+        <div>
+            <h4>Danh Mục Đã Chọn:</h4>
+            <ul>
+                <li *ngFor="let danhmuc of sachDanhMucList">
+                    {{ danhmuc.tenDanhMuc }}
+                    <button class="delete-btn w3-ripple w3-white" (click)="deleteNewDanhMuc(danhmuc.id)">x</button>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

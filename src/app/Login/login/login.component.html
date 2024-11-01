@@ -1,0 +1,30 @@
+<form>
+    <div class="container">
+        <div class="loginForm">
+            <div class="col-md-6">
+                <img src="login-bg.png">
+            </div>
+            <div class="col-md-4">
+                <fieldset>
+                    <div>
+                        <h2>Đăng Nhập</h2>
+                        <label for="userName"><b>Tên Đăng Nhập:</b></label><br>
+                        <input type="text" name="userName" [(ngModel)]="userName" class="form-control"><br>
+                        <label for="password"><b>Mật Khẩu:</b></label><br>
+                        <input type="text" name="password" [(ngModel)]="password" class="form-control">
+                    </div>
+                    <div>
+                        <input type="checkbox"> <label style="padding-left: 10px;">Lưu Mật Khẩu</label>
+                        <a href="">Quên Mật Khẩu?</a>   
+                    </div>
+                    <div>
+                        <label>Bạn Chưa Có Tài Khoản?</label><a href="">Đăng Ký Ngay</a>
+                    </div>      
+                    <div >
+                        <button class="btn-dangnhap w3-ripple" (click)="login()">Đăng Nhập</button>
+                    </div> 
+                </fieldset>
+            </div>
+        </div>
+    </div>    
+</form>

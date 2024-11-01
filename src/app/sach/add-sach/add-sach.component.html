@@ -1,0 +1,55 @@
+<div class="container">
+  <h2> Them Sach Moi</h2>
+  <button class="back-btn w3-btn w3-ripple w3-green" routerLink="/Sach"><i class="fa fa-reply" aria-hidden="true"></i> Back to list</button>
+
+  <form [formGroup]="sachForm">
+    <div class="form-group">
+      <label for="tenSach">Ten Sach : </label>
+      <input id="tenSach" formControlName="tenSach" class="form-control" type="text" required >
+    </div>
+    <div class="form-group">
+      <label for="soLuong">So Luong : </label>
+      <input id="soLuong" formControlName="soLuong" class="form-control" type="number" required >
+    </div>
+    <div class="form-group">
+      <label for="giaTien">Gia Tien : </label>
+      <input id="giaTien" formControlName="giaTien" class="form-control" type="number" required >
+    </div>
+    <div class="form-group">
+      <label for="danhMucIds">Chon Danh Muc:</label>
+      <select formControlName="danhMucIds" multiple>
+        <ng-container *ngFor="let parent of danhMucTree">
+          <option [value]="parent.cat.id">
+            {{parent.cat.tenDanhMuc}}
+          </option>
+          <ng-container *ngFor="let child of parent.danhMucCon">
+            <option [value]="child.cat.id">
+              --{{child.cat.tenDanhMuc}}
+            </option>
+            <ng-container *ngFor="let grandChild of child.danhMucCon">
+              <option [value]="grandChild.cat.id">
+                ----{{grandChild.cat.tenDanhMuc}}
+              </option>
+              <ng-container *ngFor="let grandChilds1 of grandChild.danhMucCon">
+                <option [value]="grandChilds1.cat.id">
+                  ------{{grandChilds1.cat.tenDanhMuc}}
+                </option>
+                <ng-container *ngFor="let grandChilds2 of grandChilds1.danhMucCon">
+                  <option [value]="grandChilds2.cat.id">
+                    --------{{grandChilds2.cat.tenDanhMuc}}
+                  </option>
+                  <ng-container *ngFor="let grandChild3 of grandChilds2.danhMucCon">
+                    <option [value]="grandChild3.cat.id">
+                      ----------{{grandChild3.cat.tenDanhMuc}}
+                    </option>
+                  </ng-container>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+      </select>
+    </div>
+  </form>
+  <button class="back-btn w3-btn w3-ripple w3-green" (click)="addSach()">Them Sach !</button>
+</div>

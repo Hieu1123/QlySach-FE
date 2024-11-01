@@ -1,0 +1,174 @@
+
+.custom-btn{
+    border: none;
+    background-color:#75c1f8 ;
+}
+.list-btn,.add-btn , .back-btn, .update-btn, .delete-btn, .cancel-btn, .edit-btn,.save-btn
+{
+    border: none;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+.add-btn{
+    margin-left: 10px;
+}
+.delete-btn{
+    margin-left: 10px;
+}
+.themdanhmuc{
+    margin-top: 5px;
+}
+
+/* Căn chỉnh container cha */
+.container {
+    padding: 10px;
+}
+
+/* Bố cục tổng thể cho phần header */
+.container.header {
+    justify-content: space-between; /* Căn giữa các phần tử và trải đều */
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+    background-color: #f8f9fa; /* Màu nền của header */
+    padding: 10px;
+    border-bottom: 2px solid #ddd; /* Đường viền ở dưới */
+}
+
+/* Quản Lý Sách phần trái */
+.container.header .nav-link {
+    text-decoration: none; /* Xóa gạch chân */
+    color: #333; /* Màu chữ */
+    font-weight: bold; /* Đậm chữ */
+    font-size: 1.2em;
+}
+
+.container.header .nav-link.active {
+    color: #007bff; /* Màu chữ khi active */
+}
+
+.container.header .nav-link i {
+    margin-right: 8px; /* Khoảng cách giữa icon và chữ */
+}
+
+/* Hộp tìm kiếm ở giữa */
+.search-box {
+    max-width: 500px;
+    width: 100%;
+}
+
+.search-box input[type="search"] {
+    width: 85%; /* Độ rộng của ô tìm kiếm */
+    border: 1px solid #ddd; /* Viền xám */
+    border-radius: 5px 0 0 5px; /* Viền bo tròn */
+    padding: 5px;
+    font-size: 1em;
+}
+
+.search-box button {
+    background-color: #007bff; /* Màu nền của nút tìm kiếm */
+    color: white; /* Màu chữ */
+    border: none;
+    border-radius: 0 5px 5px 0; /* Bo tròn chỉ bên phải */
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.search-box button i {
+    margin-right: 0;
+}
+
+.search-box button:hover {
+    background-color: #0056b3; /* Đổi màu khi hover */
+}
+
+/* Phần đăng nhập và giỏ hàng ở bên phải */
+.Login {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Login .custom-btn {
+    background-color: #007bff; /* Màu nền cho các nút */
+    color: white; /* Màu chữ */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px; /* Khoảng cách giữa các nút */
+}
+
+.Login .custom-btn:hover {
+    background-color: #0056b3; /* Đổi màu khi hover */
+}
+
+.Login .custom-btn i {
+    margin-right: 5px; /* Khoảng cách giữa icon và chữ */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container.header {
+        flex-direction: column; /* Khi màn hình nhỏ, chuyển thành cột */
+        align-items: flex-start;
+    }
+    .search-box {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .Login {
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+}
+/* Đặt kiểu cho thanh điều hướng (nav) */
+nav {
+    background-color: #75c1f8; /* Màu nền cho thanh điều hướng */
+    padding: 10px; /* Khoảng cách bên trong */
+    display: flex; /* Căn chỉnh các phần tử theo hàng ngang */
+    justify-content: center; /* Căn giữa nội dung */
+    align-items: center; /* Căn giữa các nút theo chiều dọc */
+    border-bottom: 2px solid #4a90e2; /* Đường viền dưới thanh điều hướng */
+}
+
+/* Đặt kiểu cho các nút trong thanh điều hướng */
+nav .list-btn {
+    background-color: #75c1f8; /* Màu nền cho các nút */
+    color: white; /* Màu chữ */
+    border: none; /* Không viền */
+    padding: 10px 20px; /* Khoảng cách bên trong nút */
+    font-size: 16px; /* Kích thước chữ */
+    cursor: pointer; /* Hiển thị con trỏ khi hover */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
+    text-align: center;
+}
+
+nav .list-btn:hover {
+    background-color: #4a90e2; /* Đổi màu nền khi hover */
+    color: #fff; /* Đổi màu chữ khi hover */
+}
+
+/* Đặt dấu phân cách giữa các nút */
+nav .list-btn + .list-btn {
+    margin-left: 10px; /* Khoảng cách giữa các nút */
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Bố trí cột khi trên màn hình nhỏ */
+    }
+
+    nav .list-btn {
+        margin-bottom: 10px; /* Khoảng cách dưới mỗi nút */
+    }
+
+    nav .list-btn + .list-btn {
+        margin-left: 0; /* Không cần khoảng cách trái trong màn hình nhỏ */
+    }
+}
+.User-btn{
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+
